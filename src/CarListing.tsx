@@ -28,6 +28,7 @@ const CarListing = observer (
 
       return (
         <div>
+          <span>{process.env.MY_VAR}</span>
           <button onClick={this.load}>Load cars</button>
           <ul>{values}</ul>
         </div>

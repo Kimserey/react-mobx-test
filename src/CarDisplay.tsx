@@ -1,7 +1,12 @@
 import * as React from 'react';
 
-class CarDisplay extends React.Component<{ id: string }, { clicked: string }> {
-  constructor(props: { id: string }) {
+interface ICarDisplayProps {
+  id: string,
+  onSelect: (id: string) => void
+}
+
+class CarDisplay extends React.Component<ICarDisplayProps, { clicked: string }> {
+  constructor(props: ICarDisplayProps) {
     super(props);
 
     this.state = { clicked: 'no' };
@@ -11,6 +16,8 @@ class CarDisplay extends React.Component<{ id: string }, { clicked: string }> {
     this.setState({
       clicked: 'yes!'
     });
+
+    this.props.onSelect(this.props.id);
   }
 
   public render() {

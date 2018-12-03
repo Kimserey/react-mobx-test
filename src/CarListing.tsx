@@ -14,11 +14,15 @@ const CarListing = observer (
       this.props.appState.loadCarList();
     }
 
+    public select = (id: string) => {
+      alert('Hoooooo' + id);
+    }
+
     public render() {
       const values = 
         this.props.appState.carListing.map((x, index) => 
           <li key={index}>
-            <CarDisplay id={x.id}/>
+            <CarDisplay id={x.id} onSelect={this.select}/>
           </li>
         );
 

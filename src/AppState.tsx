@@ -1,14 +1,21 @@
-import { decorate, observable } from 'mobx';
+import axios from 'axios';
+import { action, decorate, observable } from 'mobx';
 
 export class AppState {
   public carListing: Array<{ id: string }> = [];
 
-  public loadCarList() {
-    this.carListing = [{ id: "1" }, { id: "2" }];
+  public async loadCarList() {
+    const res = 
+      await axios.get<Array<{ name: string }>>('http://localhost:5000/api/persons');
+    
+      this.carListing = res.data.map(p => { 
+      return { id: p.name };
+    });
   }
 }
 
 decorate(AppState, {
-  carListing: observable
+  carListing: observable,
+  loadCarList: action
 });
 

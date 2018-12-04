@@ -18,6 +18,7 @@ const ContentPage = observer (
     public render() {
       return (
         <div>
+          <p>{process.env.REACT_APP_ENV}</p>
           <button onClick={this.load}>Load whatever</button>
           <div>
             Cars:

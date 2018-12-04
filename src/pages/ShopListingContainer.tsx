@@ -2,7 +2,9 @@ import { observer } from 'mobx-react';
 import * as React from 'react';
 
 import { AppState } from '../state/AppState';
-import ShopDisplay from 'src/components/ShopDisplay';
+import ShopDisplay from '../components/ShopDisplay';
+import SelectedShop from 'src/components/SelectedShop';
+
 
 const ShopListingContainer = observer (
   class ShopListingContainer extends React.Component<{ appState: AppState }> {
@@ -15,9 +17,6 @@ const ShopListingContainer = observer (
     }
 
     public render() {
-      const selectedShop = 
-        !!this.props.appState.selectedShop ? this.props.appState.selectedShop.address : 'None';
-
       const shops =  
         this.props.appState.shops.map((shop) => 
           <li key={shop.address}>
@@ -27,7 +26,7 @@ const ShopListingContainer = observer (
 
       return (
         <div>
-          <div>Selected Shop: {selectedShop}</div>
+          <div>Selected Shop: <SelectedShop shop={this.props.appState.selectedShop}/></div>
           <ul>{shops}</ul>
         </div>
       );

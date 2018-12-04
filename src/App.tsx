@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { AppState } from './AppState';
-import CarListing from './CarListing';
+import ContentPage from './pages/ContentPage';
+import { AppState } from './state/AppState';
 
 class App extends React.Component {
   public render() {
     return (
-      <CarListing appState={new AppState()}/>
+      <ContentPage appState={new AppState()}/>
     );
   }
 }

@@ -8,6 +8,10 @@
     ]
   },
   "rules":{
-    "no-shadowed-variable": false
+    "interface-name": [false, "always-prefix"],
+    "no-console": false,
+    "no-shadowed-variable": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false
   }
 }

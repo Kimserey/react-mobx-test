@@ -5,8 +5,10 @@ import { AppState } from './state/AppState';
 
 class App extends React.Component {
   public render() {
+    const appState = new AppState();
+
     return (
-      <ContentPage appState={new AppState()}/>
+      <ContentPage rootStore={appState}/>
     );
   }
 }

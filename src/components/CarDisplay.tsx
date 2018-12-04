@@ -16,8 +16,8 @@ class CarDisplay extends React.Component<CarDisplayProps> {
   }
 
   public render() {
-    console.log('rendered');
-    return (<button onClick={this.onClick}> Car number {this.props.id} {this.props.name}</button>);
+    console.log('Car Display Rendered');
+    return (<button onClick={this.onClick}> Car: {this.props.id} {this.props.name}</button>);
   }
 }
 

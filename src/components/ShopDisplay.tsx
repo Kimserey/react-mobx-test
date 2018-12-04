@@ -15,7 +15,7 @@ class ShopDisplay extends React.Component<ShopDisplayProps> {
   }
 
   public render() {
-    console.log('rendered shop');
+    console.log('ShopDisplay Rendered');
     return (<button onClick={this.onClick}> Shop: {this.props.address}</button>);
   }
 }
